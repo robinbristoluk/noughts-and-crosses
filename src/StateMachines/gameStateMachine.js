@@ -33,29 +33,29 @@ export default Machine({
         playing: {
             on: {
                 MAKE_MOVE: {
-                    target: 'checking_board',
-                    actions: 'update_game'
+                    target: 'checkingBoard',
+                    actions: 'updateGame'
                 }
             }
         },
-        checking_board: {
+        checkingBoard: {
             always: [
                 {
-                    target: '#GS.game_over.won',
-                    cond: 'is_game_won',
-                    actions: 'set_winning_combo'
+                    target: '#GS.gameOver.won',
+                    cond: 'isGameWon',
+                    actions: 'setWinningCombo'
                 },
                 {
-                    target: '#GS.game_over.drawn',
-                    cond: 'is_board_full'
+                    target: '#GS.gameOver.drawn',
+                    cond: 'isBoardFull'
                 },
                 { 
                     target: '#GS.playing',
-                    actions: 'update_whose_turn'
+                    actions: 'updateWhoseTurn'
                 }
             ]
         },
-        game_over: {
+        gameOver: {
             states: {
                 won: {},
                 drawn: {}
@@ -64,7 +64,7 @@ export default Machine({
                 PLAY_AGAIN: [
                     {  
                         target: '#GS.playing',
-                        actions: 'reset_game'
+                        actions: 'resetGame'
                     }
                 ]
             }
@@ -73,37 +73,35 @@ export default Machine({
 },
 {
     actions: {
-        update_game: assign({
+        updateGame: assign({
             squares: ({squares, isXTurn}, event) => squares.map((sq, index) => {
                 return index === event.square ?
                     (isXTurn ? 'X' : 'O') :
                     sq;
             })
         }),
-        update_whose_turn: assign({
+        updateWhoseTurn: assign({
             isXTurn: context => !context.isXTurn
         }),
-        reset_game: assign({
+        resetGame: assign({
             squares: Array(9).fill(null),
             xStartedLast: context => !context.xStartedLast,
             isXTurn: context => !context.xStartedLast,
             winningCombo: null
         }),
-        set_winning_combo: assign({
+        setWinningCombo: assign({
             winningCombo: (context) => getWinningLine(context.squares)
         })
     },
     guards: {
-        is_game_won: context => {
+        isGameWon: context => {
             const winningLine = getWinningLine(context.squares);
             return !!winningLine;
         },
-        is_board_full: context => {
+        isBoardFull: context => {
             return !context.squares.some(s => s === null);
         },
-        was_x_turn: context => context.isXTurn,
-        was_o_turn: context => !context.isXTurn,
-        x_started_last_game: context => context.xStartedLast,
-        o_started_last_game: context => !context.xStartedLast
+        wasXTurn: context => context.isXTurn,
+        wasOTurn: context => !context.isXTurn
     }
 });

@@ -12,10 +12,10 @@ export default ({children}) => {
         squares: current.context.squares,
         whoseTurn: current.context.isXTurn ? 'X' : 'O',
         isPlaying: isInState('playing'),
-        isGameOver: isInState('game_over'),
-        isGameWon: isInState('game_over.won'),
-        isGameDrawn: isInState('game_over.drawn'),
-        iCheckingBoard: isInState('checking_board'),
+        isGameOver: isInState('gameOver'),
+        isGameWon: isInState('gameOver.won'),
+        isGameDrawn: isInState('gameOver.drawn'),
+        iCheckingBoard: isInState('checkingBoard'),
         isSquareEmpty: index => {
             return !current.context.squares[index];
         },

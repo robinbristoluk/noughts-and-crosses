@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {gameContext} from './GameContext';
+import {gameContext} from '../Contexts/GameContext';
 
 export default () => {
     return useContext(gameContext);

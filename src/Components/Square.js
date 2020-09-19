@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import useGameContext from '../Contexts/useGameContext';
+import useGameContext from '../Hooks/useGameContext';
 
 export default ({square, index}) => {
 
@@ -12,9 +12,9 @@ export default ({square, index}) => {
         }
     };
 
-    const classes = classnames('square', { 'square--winning': isGameWon && isWinningSquare(index) });
+    const classes = classnames('square', { 'square--winning': isGameWon && isWinningSquare(index), 'square--x': square === 'X', 'square--o': square === 'O'  });
 
     return <div className={classes} onClick={handleClick}>
-        {square}
+        <span>{square}</span>
     </div>
 };

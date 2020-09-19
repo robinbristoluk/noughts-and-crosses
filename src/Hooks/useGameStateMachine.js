@@ -1,5 +1,5 @@
 import { useMachine }  from '@xstate/react';
-import gameStateMachine from './gameStateMachine';
+import gameStateMachine from '../StateMachines/gameStateMachine';
 
 const useGameStateMachine = () => {
     return useMachine(gameStateMachine);

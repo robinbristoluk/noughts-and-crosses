@@ -1,5 +1,8 @@
 import React from 'react';
+import useTypeText from '../Hooks/useTypeText';
 
-export default () => (
-    <h1>Tic Tac Toe</h1>
-)
+export default () => {
+    const typedText = useTypeText("Noughts and Crosses");
+
+    return <h1>&nbsp;{typedText}&nbsp;</h1>
+}

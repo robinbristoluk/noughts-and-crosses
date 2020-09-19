@@ -1,5 +1,5 @@
 import React, {createContext} from 'react';
-import useGameStateMachine from '../StateMachines/useGameStateMachine';
+import useGameStateMachine from '../Hooks/useGameStateMachine';
 
 export const gameContext = createContext();
 
@@ -16,6 +16,7 @@ export default ({children}) => {
         isGameWon: isInState('gameOver.won'),
         isGameDrawn: isInState('gameOver.drawn'),
         iCheckingBoard: isInState('checkingBoard'),
+        nextPlayerToStart: current.context.xStartedLast ? 'O': 'X',
         isSquareEmpty: index => {
             return !current.context.squares[index];
         },

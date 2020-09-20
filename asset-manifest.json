@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/noughts-and-crosses/static/css/main.bf8d15a3.chunk.css",
+    "main.js": "/noughts-and-crosses/static/js/main.2fbc08d5.chunk.js",
+    "main.js.map": "/noughts-and-crosses/static/js/main.2fbc08d5.chunk.js.map",
+    "runtime-main.js": "/noughts-and-crosses/static/js/runtime-main.361c9b63.js",
+    "runtime-main.js.map": "/noughts-and-crosses/static/js/runtime-main.361c9b63.js.map",
+    "static/js/2.dcbda167.chunk.js": "/noughts-and-crosses/static/js/2.dcbda167.chunk.js",
+    "static/js/2.dcbda167.chunk.js.map": "/noughts-and-crosses/static/js/2.dcbda167.chunk.js.map",
+    "index.html": "/noughts-and-crosses/index.html",
+    "precache-manifest.2bd26c56bba5011f941d6988bbb5163b.js": "/noughts-and-crosses/precache-manifest.2bd26c56bba5011f941d6988bbb5163b.js",
+    "service-worker.js": "/noughts-and-crosses/service-worker.js",
+    "static/css/main.bf8d15a3.chunk.css.map": "/noughts-and-crosses/static/css/main.bf8d15a3.chunk.css.map",
+    "static/js/2.dcbda167.chunk.js.LICENSE.txt": "/noughts-and-crosses/static/js/2.dcbda167.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.361c9b63.js",
+    "static/js/2.dcbda167.chunk.js",
+    "static/css/main.bf8d15a3.chunk.css",
+    "static/js/main.2fbc08d5.chunk.js"
+  ]
+}

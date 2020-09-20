@@ -1,5 +1,6 @@
 {
   "name": "noughts-and-crosses",
+  "homepage": "https://robinbristoluk.github.io/noughts-and-crosses/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

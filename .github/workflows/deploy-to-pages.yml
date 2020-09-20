@@ -26,6 +26,9 @@ jobs:
       - name: Run npm build
         run: npm run build
       
+      - name: List contents
+        run: ls -alh
+      
       - name: Deploy to github pages
         uses: crazy-max/ghaction-github-pages@v2.1.2
         with: 
